@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.heading h1 {
+  text-align: center;
+  margin: 0;
+  padding-top: 190px;
+  padding-bottom: 30px;
+}
+
+.form {
+  width: 400px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+
+  >label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  
+  > textarea , input {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    
+  }
+  
+  
+  >button {
+    background-color: green;
+    border: 1px solid darkgreen;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+
+
+
+
+
+.login-page {
+  background-image: url(../assets/food-3.jpg);
+  background-size: cover;
+  height: 130vh;
+}
+
+
+.signup-page {
+  background-image: url(../assets/food-2.jpg);
+  background-size: cover;
+  height: 90vh;
+}
+
+.post-recipe {
+  background-image: url(../assets/PostRecipeBg.jpg);
+  background-size: cover;
+  height: 150vh;
+
+}
+
+
+.notification {
+  font-size: small;
+  color: red;
+  padding-top: 10px;
+  font-weight: 800;
+}
+
+.disclaimer {
+  width: 400px;
+  margin: 10px auto;
+  font-weight: 400;
+}
+
+
+
+
+
+
+
+

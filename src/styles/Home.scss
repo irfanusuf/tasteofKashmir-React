@@ -1,0 +1,71 @@
+.main-section {
+    display: flex;
+    background-image: url(../assets/landingPageBg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 90vh;
+
+
+}
+
+.section-right {
+
+    position: absolute;
+    top: 200px;
+    right: 80px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+
+    >h1 {
+        color: aliceblue;
+        margin: 0;
+        font-size: 72px;
+        font-family: cursive;
+    }
+
+    >h2 {
+        color: aliceblue;
+        margin: 0;
+        font-size: 60px;
+        letter-spacing: 5x;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    }
+
+    >p {
+        color: aliceblue;
+        font-size: 40px;
+        margin: 0;
+    }
+
+}
+
+
+.explore-buttons {
+
+    margin-top: 20px;
+
+
+    >a {
+        color: antiquewhite;
+        text-decoration: none;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 8px 20px;
+        font-size: 26px;
+        margin-left: 5px;
+        font-weight: 600;
+
+        > span {
+
+            font-size: 24px;
+           
+        }
+
+        &:hover {
+            background-color: rgba(0, 128, 0, 0.801);
+
+        }
+    }
+}

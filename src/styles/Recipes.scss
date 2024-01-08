@@ -1,0 +1,109 @@
+.display-port {
+
+    height: 150vh;
+    background-image: url(../assets/food-4.jpg);
+    background-size: cover;
+
+
+}
+
+.display-port-2 {
+
+    background-image: url(../assets/food-4.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+
+
+
+
+
+
+.heading {
+
+    >label {
+
+        font-size: larger;
+        margin: 0;
+        padding-top: 50px;
+    }
+    
+    > input {
+    
+        box-shadow: 2px 2px 10px rgb(74, 74, 75);
+        width: 200px;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-top: 10px;
+    
+    }
+}
+
+
+
+
+
+
+
+.recipes-container {
+
+
+    width: 50%;
+    margin: auto;
+   
+
+    >.recipe-container {
+
+
+        >h2 {
+            color: rgb(212, 127, 70);
+        }
+    
+    
+        >img {
+    
+            border-radius: 10px;
+        }
+    
+        >p {
+            font-weight: 400;
+    
+        }
+    
+        >li {
+    
+            margin-left: 10px;
+            font-size: large;
+            font-weight: 600;
+        }
+    
+    }
+    
+}
+
+
+
+
+
+.spinner {
+    display: flex;
+    margin-top: 420px;
+    margin-left: 320px;
+    animation: rotate infinite linear 1s;
+
+
+
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
