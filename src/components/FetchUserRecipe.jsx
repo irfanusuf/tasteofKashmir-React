@@ -21,13 +21,18 @@ const FetchUserRecipe = () => {
 
   return (
     <div className='fetch-recipe'>
+
+<div className='heading'><h1> Great Recipes from Great Authors</h1> </div>
+      
       <div className='recipe-card-container'>
+      
         {recipes.map((recipe) => (
           <div key={recipe._id} className='recipe-card'>
-            <h2>Title</h2>
-            <p>{recipe.title}</p>
-            <img src={recipe.imageUrl} alt='text'  />
-            <br/>
+
+            <h2>Title : {recipe.title}</h2>
+            <img src={recipe.imageUrl} alt='text' />
+
+            <br />
             <span>Ingredients</span>
             <div>
               <p>{recipe.ingredients}</p>
@@ -37,8 +42,8 @@ const FetchUserRecipe = () => {
               <p>{recipe.instructions}</p>
             </div>
 
-        <p>Author</p>
-        <div>
+            <p>Author</p>
+            <div>
               <p>{recipe.author.username}</p>
             </div>
           </div>

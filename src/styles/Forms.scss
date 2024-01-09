@@ -8,12 +8,12 @@
 .heading h1 {
   text-align: center;
   margin: 0;
-  padding-top: 190px;
+  padding-top: 100px;
   padding-bottom: 30px;
 }
 
 .form {
-  width: 400px;
+  width: 300px;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -60,9 +60,9 @@
 
 
 .login-page {
-  background-image: url(../assets/food-3.jpg);
+  background-image: url(../assets/food-2.jpg);
   background-size: cover;
-  height: 130vh;
+  height: 90vh;
 }
 
 
@@ -82,13 +82,13 @@
 
 .notification {
   font-size: small;
-  color: red;
+  color: rgb(0, 110, 255);
   padding-top: 10px;
-  font-weight: 800;
-}
+  font-weight: 600;
+  font-size: 16px;}
 
 .disclaimer {
-  width: 400px;
+  width: 300px;
   margin: 10px auto;
   font-weight: 400;
 }
