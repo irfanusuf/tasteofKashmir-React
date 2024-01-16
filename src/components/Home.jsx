@@ -24,7 +24,7 @@ const Home = () => {
           <div className='explore-buttons'>
 
             <Link to='/signup'><span> Register </span><FaFileInvoice /> </Link>
-            <Link to='/fetch/user/Recipe'><span>Explore </span>  <FiSend /> </Link> 
+            <Link to='/fetch/rapid/recipes'><span>Explore </span>  <FiSend /> </Link> 
 
           </div>
 

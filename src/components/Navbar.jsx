@@ -13,20 +13,18 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [message, setMessage] = useState("")
     const [DropdownOpen, setDropdownOpen] = useState(false);
-
-
-
     const isLoggedIn = localStorage.getItem('token');
     const username = localStorage.getItem('username')
     
-   
 
-
-
+    const handleProfileClick = () => {
+        setDropdownOpen(!DropdownOpen)
+    } 
 
 
     const handleLogout = async () => {
         localStorage.removeItem('token');
+        localStorage.removeItem('username')
         setMessage(" You have been logged Out Succesfully! ")
         setTimeout(() => setMessage(''), 5000);
         setDropdownOpen(!DropdownOpen)
@@ -34,9 +32,6 @@ const Navbar = () => {
     }
 
 
-    const handleProfileClick = () => {
-        setDropdownOpen(!DropdownOpen)
-    } 
       
    
 
@@ -84,7 +79,7 @@ const Navbar = () => {
                                   <Link onClick={handleProfileClick} to='/post/user/Recipe' > Post your Recipe </Link>
                                   <Link onClick={handleProfileClick}to='/' > Just for Fun </Link>
                                   <Link onClick={handleProfileClick} to='/' > No login here  </Link>
-                                  <Link onClick={handleProfileClick}to='/' > Nexterra </Link>
+                                  <Link onClick={handleProfileClick} to='/' > Nexterra </Link>
                                 
                                 <button  onClick={handleLogout}>Logout</button>
                             </ul>

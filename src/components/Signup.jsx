@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../styles/Forms.scss';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Signup = () => {
 
@@ -13,8 +15,18 @@ const navigate = useNavigate();
     password: '',
   });
 
-  const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [eye , setEye] = useState("password")
+
+
+
+  function eyeclick () {
+
+    setEye("text")
+    if(eye = "text"){
+      setEye("password")
+    }
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,23 +38,17 @@ const navigate = useNavigate();
 
     try {
       setLoading(true);
-
       const response = await axios.post('http://localhost:4000/api/signup', formData);
-      console.log(response.data.message)
       if (response.status === 201) {
-        setMessage('User created successfully');
-        navigate ( '/login')
-
-
-      } else if (response.data.message === "User already exists") {
-        setMessage('User with this email already exists');
-      } else if (response.data.message === 'All credentials required') {
-        setMessage('Invalid input. Please provide all fields.');
+      //  toast.success(response.data.message) 
+       navigate ( '/login')
+        
       } else {
-        setMessage('Error creating user');
+        toast.error(response.data.message)
       }
     } catch (error) {
       console.error(error);
+      toast.error("Server Error")
 
     } finally {
       setLoading(false);
@@ -51,6 +57,7 @@ const navigate = useNavigate();
 
   return (
     <div className='signup-page'>
+      <ToastContainer position='top-center'/>
 
       <div className='heading'>
         <h1> Register </h1>
@@ -65,7 +72,6 @@ const navigate = useNavigate();
             name='username'
             value={formData.username}
             onChange={handleChange}
-
           />
 
           <label>
@@ -75,24 +81,33 @@ const navigate = useNavigate();
             name='email'
             value={formData.email}
             onChange={handleChange}
-
           />
 
           <label>
             Password:  </label>
+       
+          <div>
           <input
-            type='password'
+            type= {eye}
             name='password'
             value={formData.password}
             onChange={handleChange}
+            
 
           />
+            
+    
+          <Link onClick={eyeclick}> eye</Link>
+          
+          
+          </div>
+
+          <br/>
 
           <button type='submit' disabled={loading}>
             {loading ? 'Signing Up...' : 'Sign Up'}
           </button>
-
-          <div className='notification'> {message && `${message}`}</div>
+ 
         </form>
       </div>
 

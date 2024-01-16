@@ -85,25 +85,3 @@
 
 
 
-
-
-.spinner {
-    display: flex;
-    margin-top: 420px;
-    margin-left: 320px;
-    animation: rotate infinite linear 1s;
-
-
-
-}
-
-
-@keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
-}

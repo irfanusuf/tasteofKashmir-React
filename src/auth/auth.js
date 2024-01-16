@@ -1,19 +1,31 @@
-// useAuth.js
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const useAuth = () => {
-  const navigate = useNavigate();
+// import jwt from "jsonwebtoken";
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
+// const tokenPresent = localStorage.getItem("token");
 
-    if (!token) {
-      
-      navigate('/login');
-    }
-  }, [navigate]);
-};
+// const isTokenExpired = (token) => {
+//   try {
+//     const decodedToken = jwt.decode(token);
+//     if (!decodedToken || !decodedToken.exp) {
+//       return true; 
+//     }
+//     return Date.now() >= decodedToken.exp * 1000;
 
-export default useAuth;
+//   } catch (error) {
+//     console.error("Error decoding token:", error);
+//     return true; 
+//   }
+// };
+
+// const isAuthenticated = tokenPresent && !isTokenExpired(tokenPresent);
+
+// export default isAuthenticated;
+
+const IsAuthenticated = localStorage.getItem('token') 
+
+console.log(IsAuthenticated)
+
+  
+
+export default IsAuthenticated;
 

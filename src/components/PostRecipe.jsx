@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/Forms.scss'
-import useAuth from '../auth/auth';
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const PostRecipeForm = () => {
-
-
-  useAuth();
 
 
   const [title, setTitle] = useState('')
   const [ingredients, setIngredients] = useState('')
   const [instructions, setInstructions] = useState('')
   const [image, setImage] = useState(null)
-  const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
-
-
 
   const handleFile = (e) => {
     const file = e.target.files[0];
@@ -29,13 +24,8 @@ const PostRecipeForm = () => {
     };
   };
 
-
-
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       setLoading(true);
 
@@ -46,10 +36,6 @@ const PostRecipeForm = () => {
       formDataArr.append('image', image);
 
       const token = localStorage.getItem('token');
-
-
-
-
       const response = await axios.post('http://localhost:4000/api/post/recipe', formDataArr,
 
         { headers: { 'Authorization': `${token}` } }
@@ -57,16 +43,15 @@ const PostRecipeForm = () => {
       );
 
       if (response.data.message === 'Recipe Created') {
-        setMessage(response.data.message);
+        toast.success(response.data.message)
         
 
       } else {
-        setMessage(response.data.message);
-        // setTimeout(() => setMessage(''), 6000);
+        toast.error(response.data.message)
       }
     } catch (error) {
       console.error(error);
-      setMessage('server error');
+      toast.error("Server Error")
     } finally {
       setLoading(false);
     }
@@ -75,8 +60,7 @@ const PostRecipeForm = () => {
   return (
 
     <div className='post-recipe'>
-
-
+      <ToastContainer/>
       <div className='heading'>
         <h1>Post a New Recipe</h1>
       </div>
@@ -101,9 +85,7 @@ const PostRecipeForm = () => {
 
           <img src={image} alt={title} width={200} />
 
-          <div className='notification'>{message && <p>{message}</p>}</div>
-
-
+    
           <button type="submit" disabled={loading}>
             {loading ? 'Posting...' : 'Post Recipe'}
           </button>
