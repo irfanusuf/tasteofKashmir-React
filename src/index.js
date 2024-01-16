@@ -6,7 +6,7 @@ const App = lazy(() => delayForDemo(import("./App")));
 
 async function delayForDemo(promise) {
   await new Promise((resolve) => {
-    setTimeout(resolve, 500);
+    setTimeout(resolve, 100);
   });
   return promise;
 }

@@ -54,6 +54,21 @@
   }
 }
 
+.password-input{
+
+position: relative;
+display: flex;
+
+}
+
+
+.password-hider{
+position: absolute;
+right: 10px;
+top: 8px;
+
+}
+
 
 
 
@@ -80,12 +95,7 @@
 }
 
 
-.notification {
-  font-size: small;
-  color: rgb(0, 110, 255);
-  padding-top: 10px;
-  font-weight: 600;
-  font-size: 16px;}
+
 
 .disclaimer {
   width: 300px;

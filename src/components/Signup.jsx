@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import '../styles/Forms.scss';
 import axios from 'axios';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 
 const Signup = () => {
@@ -16,17 +18,11 @@ const navigate = useNavigate();
   });
 
   const [loading, setLoading] = useState(false);
-  const [eye , setEye] = useState("password")
+  const [eye , setEye] = useState(true)
 
 
 
-  function eyeclick () {
-
-    setEye("text")
-    if(eye = "text"){
-      setEye("password")
-    }
-  }
+  function eyeclick () {setEye(!eye)}
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,7 +36,6 @@ const navigate = useNavigate();
       setLoading(true);
       const response = await axios.post('http://localhost:4000/api/signup', formData);
       if (response.status === 201) {
-      //  toast.success(response.data.message) 
        navigate ( '/login')
         
       } else {
@@ -72,6 +67,7 @@ const navigate = useNavigate();
             name='username'
             value={formData.username}
             onChange={handleChange}
+            placeholder='Enter your Text'
           />
 
           <label>
@@ -81,25 +77,26 @@ const navigate = useNavigate();
             name='email'
             value={formData.email}
             onChange={handleChange}
+            placeholder='Enter your Email'
           />
 
           <label>
             Password:  </label>
        
-          <div>
+          <div className='password-input'>
           <input
-            type= {eye}
+            type= {eye ? "text" : "password"}
             name='password'
             value={formData.password}
             onChange={handleChange}
+            placeholder='Enter your Password'
+    
+            />
             
 
-          />
-            
-    
-          <Link onClick={eyeclick}> eye</Link>
-          
-          
+            <div className='password-hider'>
+            { eye ? < FaRegEyeSlash  onClick={eyeclick} /> : <  FaRegEye onClick={eyeclick} /> } 
+            </div>
           </div>
 
           <br/>

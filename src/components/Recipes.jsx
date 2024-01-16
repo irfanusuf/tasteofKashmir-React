@@ -2,8 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/Recipes.scss";
 import Image from "../assets/onion.png";
+import IsAuthenticated from "../auth/auth";
 
 function Recipes() {
+
+
+
+  IsAuthenticated()
+
 
   const [recipeData, setRecipeData] = useState([]);
   const [category, setCategory] = useState("chicken");

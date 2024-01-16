@@ -1,3 +1,23 @@
+import { useNavigate } from "react-router-dom";
+
+const IsAuthenticated = async() => {
+    const navigate = useNavigate();
+  
+    const token = await localStorage.getItem("token");
+  
+    if (!token) {
+      navigate("/login");
+    }
+  };
+  
+  export default IsAuthenticated;
+
+  
+
+
+
+
+
 
 // import jwt from "jsonwebtoken";
 
@@ -7,25 +27,17 @@
 //   try {
 //     const decodedToken = jwt.decode(token);
 //     if (!decodedToken || !decodedToken.exp) {
-//       return true; 
+//       return true;
 //     }
 //     return Date.now() >= decodedToken.exp * 1000;
 
 //   } catch (error) {
 //     console.error("Error decoding token:", error);
-//     return true; 
+//     return true;
 //   }
 // };
 
 // const isAuthenticated = tokenPresent && !isTokenExpired(tokenPresent);
 
 // export default isAuthenticated;
-
-const IsAuthenticated = localStorage.getItem('token') 
-
-console.log(IsAuthenticated)
-
-  
-
-export default IsAuthenticated;
 
