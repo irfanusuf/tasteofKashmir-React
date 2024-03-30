@@ -6,8 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const PostRecipeForm = () => {
 
-  const baseUrl = "https://recipe-server-wmgr.onrender.com"
-  const [title, setTitle] = useState('')
+  
+  const baseUrl = "https://recipes-j110.onrender.com"  const [title, setTitle] = useState('')
   const [ingredients, setIngredients] = useState('')
   const [instructions, setInstructions] = useState('')
   const [image, setImage] = useState(null)
