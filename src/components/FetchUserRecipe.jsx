@@ -4,12 +4,13 @@ import axios from 'axios';
 
 const FetchUserRecipe = () => {
   const [recipes, setRecipes] = useState([]);
-  const baseUrl = "https://recipe-server-wmgr.onrender.com"
+  
+  const baseUrl = "https://recipes-j110.onrender.com"
 
   const fetchRecipes = async () => {
     try {
-      
-  const baseUrl = "https://recipes-j110.onrender.com"      setRecipes(response.data);
+      const response = await axios.get(`${baseUrl}/api/fetch/recipes`)
+      setRecipes(response.data);
       console.log(response.data);
     } catch (error) {
       console.error('Error fetching recipes:', error);
