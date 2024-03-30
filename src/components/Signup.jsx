@@ -11,7 +11,7 @@ const Signup = () => {
 
 
 const navigate = useNavigate();
-  const baseUrl = "https://recipe-server-wmgr.onrender.com"
+  const baseUrl = "https://recipes-j110.onrender.com"
   const [formData, setFormData] = useState({
     username: '',
     email: '',
