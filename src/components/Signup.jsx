@@ -11,6 +11,7 @@ const Signup = () => {
 
 
 const navigate = useNavigate();
+  const baseUrl = "https://recipe-server-wmgr.onrender.com"
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -34,7 +35,7 @@ const navigate = useNavigate();
 
     try {
       setLoading(true);
-      const response = await axios.post('http://localhost:4000/api/signup', formData);
+      const response = await axios.post(`${baseUrl}/api/signup`, formData);
       if (response.status === 201) {
        navigate ( '/login')
         
