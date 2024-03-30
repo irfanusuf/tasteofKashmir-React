@@ -6,7 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 const PostRecipeForm = () => {
 
-
+  const baseUrl = "https://recipe-server-wmgr.onrender.com"
   const [title, setTitle] = useState('')
   const [ingredients, setIngredients] = useState('')
   const [instructions, setInstructions] = useState('')
@@ -36,7 +36,7 @@ const PostRecipeForm = () => {
       formDataArr.append('image', image);
 
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:4000/api/post/recipe', formDataArr,
+      const response = await axios.post(`${baseUrl}/api/post/recipe`, formDataArr,
 
         { headers: { 'Authorization': `${token}` } }
 
