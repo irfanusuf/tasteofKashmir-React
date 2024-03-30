@@ -8,8 +8,8 @@ const FetchUserRecipe = () => {
 
   const fetchRecipes = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/api/fetch/recipes`);
-      setRecipes(response.data);
+      
+  const baseUrl = "https://recipes-j110.onrender.com"      setRecipes(response.data);
       console.log(response.data);
     } catch (error) {
       console.error('Error fetching recipes:', error);
