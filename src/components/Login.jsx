@@ -11,8 +11,8 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
     const navigate = useNavigate();
-     const baseUrl = "https://recipe-server-wmgr.onrender.com"
-    const [loading, setLoading] = useState(false);
+    
+    const baseUrl = "https://recipes-j110.onrender.com"              const [loading, setLoading] = useState(false);
     const [eye, setEye] = useState(true)
     const [formData, setFormData] = useState({
         username: '',
