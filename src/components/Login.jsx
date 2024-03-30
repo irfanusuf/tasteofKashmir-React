@@ -11,6 +11,7 @@ import { FaRegEyeSlash } from "react-icons/fa6";
 
 const Login = () => {
     const navigate = useNavigate();
+     const baseUrl = "https://recipe-server-wmgr.onrender.com"
     const [loading, setLoading] = useState(false);
     const [eye, setEye] = useState(true)
     const [formData, setFormData] = useState({
@@ -29,7 +30,7 @@ const Login = () => {
         e.preventDefault();
         try {
             setLoading(true);
-            const response = await axios.post('http://localhost:4000/api/login', formData);
+            const response = await axios.post(`${baseUrl}/api/login`, formData);
             if (response.data.message === 'Logged In Successfully') {
 
                 const { token, username } = response.data;
